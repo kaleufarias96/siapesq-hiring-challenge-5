@@ -25,7 +25,7 @@ export default function Login() {
               <Link type="submit" href="/registrar">
               <Button className="bg-lightblue font-bold hover:bg-darkblue w-32">Registrar</Button>
               </Link>
-              <Link type="submit" href="/#">
+              <Link type="submit" href="/admin/monitoramento">
                 <Button className="bg-lightblue font-bold hover:bg-darkblue w-32">Continuar</Button>
               </Link>
             </div>

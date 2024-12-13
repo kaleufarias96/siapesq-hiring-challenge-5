@@ -21,10 +21,12 @@ const data = {
     {
       title: "Dashboard",
       url: "#",
+      
       items: [
         {
           title: "Monitoramento",
-          url: "#",
+          url: "/admin/monitoramento",
+          emoji: "🎬",
         },
         {
           title: "Historico",
@@ -38,12 +40,23 @@ const data = {
       items: [
         {
           title: "Reservatórios",
-          url: "#",
+          url: "/admin/reservatorio",
         },
         {
           title: "Servidores",
           url: "#",
           
+        },
+      ],
+    },
+    {
+      title: "Usuário",
+      url: "#",
+      items: [
+        {
+          title: "Sair",
+          url: "/login",
+          isActive: true,
         },
       ],
     },
@@ -77,7 +90,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild >
-                  <a href={item.url} className="font-medium ">
+                  <a href={item.url} className="font-bold ">
                     {item.title}
                   </a>
                 </SidebarMenuButton>
