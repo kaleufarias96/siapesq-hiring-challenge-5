@@ -13,20 +13,20 @@ export default function Login() {
         </div>
 
         <div className=" flex p-14 items-center ">
-          <div className="bg-white p-6 text-center rounded-lg w-96 max-w-full">
+          <div className="bg-white/65  p-6 text-center rounded-lg w-96 max-w-full">
             <p className="text-3xl font-bold font-sans m-2 text-darkblue">Login</p>
 
-            <div className="flex flex-col gap-4 font-bold">
+            <div className="flex flex-col gap-4 font-bold ">
               <Input className="text-center" type="email" placeholder="Insira seu E-mail" />
               <Input className="text-center" type="password" placeholder="Senha" />
             </div>
 
             <div className="flex justify-between p-4 flex-wrap ">
               <Link type="submit" href="/registrar">
-              <Button className="bg-lightblue hover:bg-darkblue">Registrar</Button>
+              <Button className="bg-lightblue font-bold hover:bg-darkblue w-32">Registrar</Button>
               </Link>
               <Link type="submit" href="/#">
-                <Button className="bg-lightblue hover:bg-darkblue">Continuar</Button>
+                <Button className="bg-lightblue font-bold hover:bg-darkblue w-32">Continuar</Button>
               </Link>
             </div>
           </div>
