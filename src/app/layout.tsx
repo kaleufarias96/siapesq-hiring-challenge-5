@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/ui/app-sidebar"
 
 export const metadata: Metadata = {
   title: "SIAPESQ",
@@ -18,6 +20,11 @@ export default function RootLayout({
       <body
         
       >
+        <SidebarProvider>
+          <SidebarTrigger />
+          <AppSidebar />
+        </SidebarProvider>
+        
         {children}
       </body>
     </html>
