@@ -1,30 +1,27 @@
-import { AppSidebar } from "@/components/ui/app-sidebar";
-import { Button } from "@/components/ui/button";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { Link } from "lucide-react";
+import { AppSidebar } from "@/components/ui/app-sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { BreadcrumbResponsive } from "./breadcrum-header"
 
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className="bg-darkblue">
-       
-       <div className="flex flex-row bg-darkblue">
-        <SidebarProvider>
-          <SidebarTrigger />
-          <AppSidebar  />
-        </SidebarProvider>
-      </div>
+    <div className="flex flex-row flex-1">
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarTrigger />
 
-        <div className="flex  bg-white rounded-lg">
-        {children} 
+        <div className="flex flex-col flex-1 border p-4 mx-4 rounded">
+          <div>
+            <BreadcrumbResponsive />
+          </div>
+          {children}
         </div>
 
-      </body>
-    </html>
-  );
+      </SidebarProvider>
+    </div>
+  )
 }

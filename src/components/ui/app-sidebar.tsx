@@ -1,6 +1,7 @@
-import * as React from "react"
 import { GalleryVerticalEnd } from "lucide-react"
+import * as React from "react"
 
+import { nav_data } from "@/app/admin/nav-data"
 import {
   Sidebar,
   SidebarContent,
@@ -15,53 +16,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-// This is sample data.
-const data = {
-  navMain: [
-    {
-      title: "Dashboard",
-      url: "#",
-      
-      items: [
-        {
-          title: "Monitoramento",
-          url: "/admin/monitoramento",
-          emoji: "🎬",
-        },
-        {
-          title: "Historico",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Gerenciamento",
-      url: "#",
-      items: [
-        {
-          title: "Reservatórios",
-          url: "/admin/reservatorio",
-        },
-        {
-          title: "Servidores",
-          url: "#",
-          
-        },
-      ],
-    },
-    {
-      title: "Usuário",
-      url: "#",
-      items: [
-        {
-          title: "Sair",
-          url: "/login",
-          isActive: true,
-        },
-      ],
-    },
-  ],
-}
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -72,12 +27,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild >
               <a href="#">
                 <div className="flex aspect-square size-14 items-center justify-center rounded-lg  text-sidebar-primary-foreground">
-                 <img src="/logo2.png" alt="logo" />
+                  <img src="/logo2.png" alt="logo" />
                   <GalleryVerticalEnd className="size-4" />
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">PhytoBloom</span>
-                  
+
                 </div>
               </a>
             </SidebarMenuButton>
@@ -87,7 +42,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            {data.navMain.map((item) => (
+            {nav_data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild >
                   <a href={item.url} className="font-bold ">
