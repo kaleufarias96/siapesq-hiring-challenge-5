@@ -11,9 +11,7 @@ export const metadata: Metadata = {
 
 export default function App() {
   return (
-
     <Login />
-
   )
 }
 

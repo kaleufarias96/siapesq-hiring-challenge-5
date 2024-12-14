@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex flex-row flex-1">
+    <div className="flex flex-row flex-1 ">
       <SidebarProvider>
         <AppSidebar />
         <SidebarTrigger />

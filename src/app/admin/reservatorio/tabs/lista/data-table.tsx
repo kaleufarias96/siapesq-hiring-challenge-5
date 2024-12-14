@@ -15,6 +15,11 @@ import {
 
 import React from "react"
 
+interface DataTableProps<TData, TValue> {
+  columns: any;
+  data: TData[];
+}
+
 export function DataTable<TData, TValue>({
   columns,
   data,
