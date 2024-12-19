@@ -1,7 +1,22 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: '/admin/dashboard',
+        destination: '/admin/dashboard/monitoramento',
+        permanent: true,
+      },
+      // Wildcard path matching
+      {
+        source: '/admin/gerenciamento',
+        destination: '/admin/gerenciamento/reservatorios',
+        permanent: true,
+      },
+    ]
+  },
+}
 
-export default nextConfig;
+export default nextConfig

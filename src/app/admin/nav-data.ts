@@ -3,31 +3,31 @@ export const nav_data = {
 	navMain: [
 		{
 			title: "Dashboard",
-			url: "#",
+			url: "/admin/dashboard",
 
 			items: [
 				{
 					title: "Monitoramento",
-					url: "/admin/monitoramento",
+					url: "/admin/dashboard/monitoramento",
 					emoji: "🎬",
 				},
 				{
 					title: "Historico",
-					url: "#",
+					url: "/admin/dashboard/historico",
 				},
 			],
 		},
 		{
 			title: "Gerenciamento",
-			url: "#",
+			url: "/admin/gerenciamento",
 			items: [
 				{
 					title: "Reservatórios",
-					url: "/admin/reservatorio",
+					url: "/admin/gerenciamento/reservatorios",
 				},
 				{
 					title: "Servidores",
-					url: "#",
+					url: "/admin/gerenciamento/servidores",
 
 				},
 			],
@@ -55,7 +55,21 @@ export function getBreadcrumbData(currentPath: string) {
 	const pathSegments = currentPath.split("/").filter(Boolean)
 	for (let i = 0; i < pathSegments.length; i++) {
 		const href = "/" + pathSegments.slice(0, i + 1).join("/")
-		const label = pathSegments[i]
+		const path = pathSegments[i]
+		let label = ""
+		function findLabel(navItems: any[], segment: string): string {
+			for (const item of navItems) {
+				if (item.url === href) {
+					return item.title
+				}
+				if (item.items) {
+					const found = findLabel(item.items, segment)
+					if (found) return found
+				}
+			}
+			return ""
+		}
+		label = findLabel(nav_data.navMain, path)
 		items.push({ href, label })
 	}
 	return items

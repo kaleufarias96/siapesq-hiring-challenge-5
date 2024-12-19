@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import {
@@ -16,8 +17,8 @@ import {
 import React from "react"
 
 interface DataTableProps<TData, TValue> {
-  columns: any;
-  data: TData[];
+  columns: any
+  data: TData[]
 }
 
 export function DataTable<TData, TValue>({
@@ -58,6 +59,8 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="rounded-md border">
         <Table>
+
+
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -76,6 +79,8 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
+
+
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
@@ -98,8 +103,36 @@ export function DataTable<TData, TValue>({
               </TableRow>
             )}
           </TableBody>
+
         </Table>
       </div>
+
+
+      <div className="flex items-center justify-end space-x-2 py-4">
+        {/* <div className="flex-1 text-sm text-muted-foreground">
+          {table.getFilteredSelectedRowModel().rows.length} of{" "}
+          {table.getFilteredRowModel().rows.length} row(s) selected.
+        </div> */}
+        <div className="space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Anterior
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Próxima
+          </Button>
+        </div>
+      </div>
+
     </div>
   )
 }

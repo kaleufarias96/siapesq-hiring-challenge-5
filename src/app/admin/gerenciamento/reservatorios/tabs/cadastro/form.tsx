@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label"
 
 export function ReservatorioForm() {
 	return (
-		<Card className="w-[350px]">
+		<Card className="min-w-[350px]">
 			<CardHeader>
 				<CardTitle>Cadastro de Reservatório</CardTitle>
 				<CardDescription>Preencha todos os campos abaixo</CardDescription>
